@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebLink xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>MEA_ApexAjax</fullName>
+    <availability>online</availability>
+    <displayType>button</displayType>
+    <linkType>javascript</linkType>
+    <masterLabel>MEA ApexAjax</masterLabel>
+    <openType>onClickJavaScript</openType>
+    <protected>false</protected>
+    <url>{!REQUIRESCRIPT(&quot;/soap/ajax/31.0/connection.js&quot;)}
+{!REQUIRESCRIPT(&quot;/soap/ajax/31.0/apex.js&quot;)}   
+{!REQUIRESCRIPT(&quot;/resource/1521653728000/jszip/jszip/dist/jszip.js&quot;)}
+{!REQUIRESCRIPT(&quot;/resource/1521653728000/jszip/jszip/vendor/FileSaver.js&quot;)}
+{!REQUIRESCRIPT(&quot;/resource/1521653728000/jsziputils/jsziputils/dist/jszip-utils.js&quot;)}
+{!REQUIRESCRIPT(&quot;/resource/1521653728000/jszip/jszip/test/jquery-1.8.3.min.js&quot;)}
+
+var sTemplateName = &quot;CONTRAT CADRE PBD 2018&quot;;
+
+///////////////////////////////////// functions
+
+function GetTemplate()
+{
+console.log(&#39;debut MMMM&#39;);
+	//execute est synchrone dans le javascript
+	var sBody = sforce.apex.execute(&quot;MEAGlobal&quot;,&quot;GetTemplate&quot;,{TemplateName:sTemplateName });
+	return sBody
+
+}
+
+function updatefilefields(sTexte)
+{
+	sTexte = sTexte.replace(/\[\[([a-zA-Z\-\_\.\s]*)\]\]/g, function(wholematch,firstmatch)
+  { 
+console.log(&quot;firstmatch: &quot; + firstmatch);
+return ochampsvalues[firstmatch];
+});
+return sTexte;
+}
+
+
+function parsefilefields(sTexte)
+{
+    var myreg = new RegExp(&quot;\\[\\[([a-zA-Z\-\_\.\s]*)\\]\\]&quot;,&quot;g&quot;);
+    var matches = [];
+    var tchamps = []; 
+    var i=0;
+
+	while(matches = myreg.exec(sTexte)) {  	   
+           tchamps[i] = matches[1];
+           console.log(&#39;matches: &#39; + matches[1]);
+           //console.log(&#39;tchampsXX: &#39; + tchamps[i]);
+           i++;
+	}
+
+//tchamps.pop();
+
+for (var i in tchamps){
+if (tchamps.hasOwnProperty(i)) { 
+console.log(&#39;matchestchamps: &#39; + tchamps[i]);
+}
+
+}
+
+     return tchamps;
+}
+
+
+
+
+
+function insertattachement(soptyID,bBody,sBody)
+{
+       sforce.apex.execute(&quot;MEAGlobal&quot;,&quot;insertattachement&quot;,{optyID:soptyID,bBody:bBody,sBody:sBody});
+}
+
+
+
+function getoppattlist() //test
+{
+	var tResult = sforce.apex.execute(&quot;MEAGlobal&quot;,&quot;getoppattlist&quot;,{optyID:soptyID});
+	for (var i=0; i&lt;tResult.length; i++) {
+		var id = tResult[i].Id;
+		var ownerid = tResult[i].OwnerId;
+		var ContentType = tResult[i].ContentType;                    
+		console.log(&#39;\n id: &#39; + id + &#39;\n&#39; + &#39;ContentType: &#39; + ContentType);
+	}
+	console.log(tResult[0].Body);
+}
+
+
+
+
+function testMAPtoJSONtoObject ()
+{
+var sResult = sforce.apex.execute(&quot;MEAGlobal&quot;,&quot;getlist&quot;,{optyID:soptyID});
+var obj1 = JSON.parse(sResult);
+var nom = obj1[&#39;006w000000YxahhAAB&#39;].Name;
+console.log(&#39;chaine: &#39; + sResult);
+console.log(&#39;parse: &#39;+ obj1);
+}
+
+
+
+function getchampsvalues(tchamps)
+{
+
+for (var i in tchamps){
+ console.log(&#39;insidefunc1 tchamps: &#39; + tchamps[i]);
+}
+
+//var tchamps2 = [&quot;Name&quot;,&quot;Type&quot;];
+
+var sResult = sforce.apex.execute(&quot;MEAGlobal&quot;,&quot;getchampsvalues&quot;,{optyID:soptyID,listchamps:tchamps});
+console.log(&#39;insidefunc sResult: &#39; + sResult);
+var obj1 = JSON.parse(sResult);
+console.log(&#39;insidefunc obj1: &#39; + obj1);
+
+for (var i in tchamps){
+   var champ = tchamps[i];
+   var valeur = obj1[tchamps[i]];
+   console.log(&#39;insidefunc boucle: &#39;+ valeur);
+}
+
+console.log(&#39;chaine: &#39; + sResult);
+console.log(&#39;parse: &#39;+ obj1);
+return obj1;
+}
+
+
+/////////////////////////////////////// main
+var sBody=&quot;text&quot;
+var soptyID = &#39;{!Opportunity.Id}&#39;;
+var bBody = null;
+
+var tBody = GetTemplate();
+var sBody = tBody[0];
+//console.log(sBody);
+var tchamps = [];
+var ochampsvalues = null;
+var sBodyNew = &#39;AAA&#39;;        
+
+
+
+
+var zip = new JSZip();
+zip.loadAsync(sBody, {base64: true})
+.then(function (zip) {
+   console.log(zip.files);
+zip.file(&quot;word/document.xml&quot;).async(&quot;string&quot;)
+.then(function (data) {
+   console.log(&quot;text1:\n&quot; +  data);
+tchamps = parsefilefields(data);
+   console.log(tchamps[0]);
+ochampsvalues = getchampsvalues(tchamps);
+   console.log(&#39;premier champ origine: &#39;+ ochampsvalues[tchamps[0]]);
+   //console.log(&#39;valeurdeville2: &#39;+ ochampsvalues[&#39;VILLE&#39;]);
+   console.log(&quot;ochampsvalues: &quot; + ochampsvalues);
+
+data2 = updatefilefields(data);
+   console.log(&quot;text2:\n&quot; +  data2);
+zip.file(&quot;word/document.xml&quot;, data2);
+zip.file(&quot;word/document.xml&quot;).async(&quot;string&quot;)
+.then(function (data3) {
+   console.log(&quot;data3&quot;);});
+zip.generateAsync({type:&quot;base64&quot;})
+				.then(function (content) {
+					sBodyNew = content;
+					//console.log(sBodyNew);
+					insertattachement(soptyID,null,sBodyNew);
+				}); //generateAsync
+				// Download the new updated file
+				//zip.generateAsync({type:&quot;blob&quot;}).then(function (content) {saveAs(content, &quot;mondoc.docx&quot;);});                
+		  });
+	});
+
+console.log(&#39;FIN&#39;);</url>
+</WebLink>

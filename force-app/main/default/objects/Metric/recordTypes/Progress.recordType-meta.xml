@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RecordType xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Progress</fullName>
+    <active>true</active>
+    <description>Réalisation de la mesure en comparant la quantité terminée à la valeur cible. Idéal pour suivre les valeurs et les pourcentages fixes. Par exemple : Convertir 50 pistes ou atteindre 100 % de satisfaction client.</description>
+    <label>Progression</label>
+</RecordType>

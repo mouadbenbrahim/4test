@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SharingRules xmlns="http://soap.sforce.com/2006/04/metadata">
+    <sharingCriteriaRules>
+        <fullName>All_View_New_and_Open_Positions</fullName>
+        <accessLevel>Read</accessLevel>
+        <label>All View New and Open Positions</label>
+        <sharedTo>
+            <allInternalUsers></allInternalUsers>
+        </sharedTo>
+        <criteriaItems>
+            <field>Status__c</field>
+            <operation>equals</operation>
+            <value>New,Open</value>
+        </criteriaItems>
+    </sharingCriteriaRules>
+    <sharingOwnerRules>
+        <fullName>VP_Human_Resource_Rule</fullName>
+        <accessLevel>Edit</accessLevel>
+        <label>VP Human Resource Rule</label>
+        <sharedTo>
+            <roleAndSubordinates>SVPHumanResources</roleAndSubordinates>
+        </sharedTo>
+        <sharedFrom>
+            <allInternalUsers></allInternalUsers>
+        </sharedFrom>
+    </sharingOwnerRules>
+</SharingRules>

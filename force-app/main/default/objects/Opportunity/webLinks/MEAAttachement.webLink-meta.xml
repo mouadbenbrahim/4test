@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebLink xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>MEAAttachement</fullName>
+    <availability>online</availability>
+    <description>manipulation des attachements</description>
+    <displayType>button</displayType>
+    <height>600</height>
+    <linkType>page</linkType>
+    <masterLabel>MEAAttachement</masterLabel>
+    <openType>sidebar</openType>
+    <page>MEAOppAttachment</page>
+    <protected>false</protected>
+</WebLink>

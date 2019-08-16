@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SharingSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <accessMappings>
+        <accessLevel>Edit</accessLevel>
+        <object>Account</object>
+        <objectField>Id</objectField>
+        <userField>Account</userField>
+    </accessMappings>
+    <description>Account et childs ex. Orders: ca impact childs qui en OWD sont Controlled by parent. (ex. Orders)</description>
+    <name>Share Account For Mea Community</name>
+    <profiles>Mea Customer Community User</profiles>
+</SharingSet>

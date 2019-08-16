@@ -1,0 +1,3 @@
+<apex:page showHeader="true" tabstyle="order">
+<apex:ListViews type="order" />
+</apex:page>

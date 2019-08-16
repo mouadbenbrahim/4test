@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Prescription_Autre__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <externalId>false</externalId>
+    <label>Prescription Autre</label>
+    <lookupFilter>
+        <active>true</active>
+        <filterItems>
+            <field>Prescription_Autre__c.Type__c</field>
+            <operation>equals</operation>
+            <value>Analyse médicale</value>
+        </filterItems>
+        <infoMessage>Selectionner une analyse prescrite</infoMessage>
+        <isOptional>false</isOptional>
+    </lookupFilter>
+    <referenceTo>Prescription_Autre__c</referenceTo>
+    <relationshipLabel>Resultats Analyses</relationshipLabel>
+    <relationshipName>Resultats_Analyses</relationshipName>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

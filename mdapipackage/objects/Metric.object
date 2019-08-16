@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fields>
+        <fullName>OrigMetricId__c</fullName>
+        <caseSensitive>true</caseSensitive>
+        <externalId>false</externalId>
+        <label>OrigMetricId</label>
+        <length>18</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>true</unique>
+    </fields>
+    <recordTypes>
+        <fullName>Completion</fullName>
+        <active>true</active>
+        <description>Indique si la mesure est terminée ou non. Idée de suivi de jalons ou lorsque vous n&apos;avez aucune métrique basée sur des valeurs fixes. Par exemple : Obtenir la certification Salesforce.</description>
+        <label>Réalisation</label>
+    </recordTypes>
+    <recordTypes>
+        <fullName>Progress</fullName>
+        <active>true</active>
+        <description>Réalisation de la mesure en comparant la quantité terminée à la valeur cible. Idéal pour suivre les valeurs et les pourcentages fixes. Par exemple : Convertir 50 pistes ou atteindre 100 % de satisfaction client.</description>
+        <label>Progression</label>
+    </recordTypes>
+</CustomObject>

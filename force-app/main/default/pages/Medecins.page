@@ -1,0 +1,7 @@
+<apex:page standardController="Contact" title="Le Medecin" showHeader="true" showChat="false" sidebar="false">
+    <apex:pageBlock title="Medecin">
+     Hello {!$User.FirstName}!
+    <h1>Dr. {!contact.name}.</h1>
+    </apex:pageBlock>
+    <apex:detail relatedList="true" showChatter="false" title="false"/>
+</apex:page>
