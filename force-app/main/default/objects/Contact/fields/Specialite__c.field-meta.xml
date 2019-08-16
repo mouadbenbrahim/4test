@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Specialite__c</fullName>
+    <externalId>false</externalId>
+    <label>Specialite</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Généraliste</fullName>
+                <default>false</default>
+                <label>Généraliste</label>
+            </value>
+            <value>
+                <fullName>Kinésithérapeute</fullName>
+                <default>false</default>
+                <label>Kinésithérapeute</label>
+            </value>
+            <value>
+                <fullName>Biologie Médicale</fullName>
+                <default>false</default>
+                <label>Biologie Médicale</label>
+            </value>
+            <value>
+                <fullName>Gynécologue</fullName>
+                <default>false</default>
+                <label>Gynécologue</label>
+            </value>
+            <value>
+                <fullName>Radiologue</fullName>
+                <default>false</default>
+                <label>Radiologue</label>
+            </value>
+            <value>
+                <fullName>Ostéopathe</fullName>
+                <default>false</default>
+                <label>Ostéopathe</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

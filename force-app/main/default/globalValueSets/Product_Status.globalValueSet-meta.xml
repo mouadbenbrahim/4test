@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GlobalValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customValue>
+        <fullName>Not authorized for Bid</fullName>
+        <default>true</default>
+        <label>Not authorized for Bid</label>
+    </customValue>
+    <customValue>
+        <fullName>Full authorization for Bid</fullName>
+        <default>false</default>
+        <label>Full authorization for Bid</label>
+    </customValue>
+    <customValue>
+        <fullName>Conditional auth. for Bid</fullName>
+        <default>false</default>
+        <label>Conditional auth. for Bid</label>
+    </customValue>
+    <customValue>
+        <fullName>Phased out</fullName>
+        <default>false</default>
+        <label>Phased out</label>
+    </customValue>
+    <masterLabel>Product Status</masterLabel>
+    <sorted>false</sorted>
+</GlobalValueSet>

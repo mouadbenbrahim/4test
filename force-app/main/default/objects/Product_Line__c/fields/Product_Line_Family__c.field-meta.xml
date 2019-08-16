@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Product_Line_Family__c</fullName>
+    <externalId>false</externalId>
+    <label>Product Line Family</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <controllingField>Business_Line__c</controllingField>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Av-BL1-PL1</fullName>
+                <default>false</default>
+                <label>Av-BL1-PL1</label>
+            </value>
+            <value>
+                <fullName>Av-BL1-PL2</fullName>
+                <default>false</default>
+                <label>Av-BL1-PL2</label>
+            </value>
+            <value>
+                <fullName>Av-BL2-PL1</fullName>
+                <default>false</default>
+                <label>Av-BL2-PL1</label>
+            </value>
+            <value>
+                <fullName>Av-BL2-PL2</fullName>
+                <default>false</default>
+                <label>Av-BL2-PL2</label>
+            </value>
+            <value>
+                <fullName>Av-BL3-PL1</fullName>
+                <default>false</default>
+                <label>Av-BL3-PL1</label>
+            </value>
+            <value>
+                <fullName>Av-BL3-PL2</fullName>
+                <default>false</default>
+                <label>Av-BL3-PL2</label>
+            </value>
+            <value>
+                <fullName>Elec-BL1-PL1</fullName>
+                <default>false</default>
+                <label>Elec-BL1-PL1</label>
+            </value>
+            <value>
+                <fullName>Elec-BL1-PL2</fullName>
+                <default>false</default>
+                <label>Elec-BL1-PL2</label>
+            </value>
+            <value>
+                <fullName>Elec-BL2-PL1</fullName>
+                <default>false</default>
+                <label>Elec-BL2-PL1</label>
+            </value>
+            <value>
+                <fullName>Elec-BL2-PL2</fullName>
+                <default>false</default>
+                <label>Elec-BL2-PL2</label>
+            </value>
+            <value>
+                <fullName>Elec-BL3-PL1</fullName>
+                <default>false</default>
+                <label>Elec-BL3-PL1</label>
+            </value>
+            <value>
+                <fullName>Elec-BL3-PL2</fullName>
+                <default>false</default>
+                <label>Elec-BL3-PL2</label>
+            </value>
+            <value>
+                <fullName>Cyb-BL1-PL1</fullName>
+                <default>false</default>
+                <label>Cyb-BL1-PL1</label>
+            </value>
+            <value>
+                <fullName>Cyb-BL1-PL2</fullName>
+                <default>false</default>
+                <label>Cyb-BL1-PL2</label>
+            </value>
+            <value>
+                <fullName>Cyb-BL2-PL1</fullName>
+                <default>false</default>
+                <label>Cyb-BL2-PL1</label>
+            </value>
+            <value>
+                <fullName>Cyb-BL2-PL2</fullName>
+                <default>false</default>
+                <label>Cyb-BL2-PL2</label>
+            </value>
+            <value>
+                <fullName>Cyb-BL3-PL1</fullName>
+                <default>false</default>
+                <label>Cyb-BL3-PL1</label>
+            </value>
+            <value>
+                <fullName>Cyb-BL3-PL2</fullName>
+                <default>false</default>
+                <label>Cyb-BL3-PL2</label>
+            </value>
+        </valueSetDefinition>
+        <valueSettings>
+            <controllingFieldValue>Avionics - BL 1</controllingFieldValue>
+            <valueName>Av-BL1-PL1</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Avionics - BL 1</controllingFieldValue>
+            <valueName>Av-BL1-PL2</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Avionics - BL 2</controllingFieldValue>
+            <valueName>Av-BL2-PL1</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Avionics - BL 2</controllingFieldValue>
+            <valueName>Av-BL2-PL2</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Avionics - BL 3</controllingFieldValue>
+            <valueName>Av-BL3-PL1</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Avionics - BL 3</controllingFieldValue>
+            <valueName>Av-BL3-PL2</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Electronics - BL 1</controllingFieldValue>
+            <valueName>Elec-BL1-PL1</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Electronics - BL 1</controllingFieldValue>
+            <valueName>Elec-BL1-PL2</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Electronics - BL 2</controllingFieldValue>
+            <valueName>Elec-BL2-PL1</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Electronics - BL 2</controllingFieldValue>
+            <valueName>Elec-BL2-PL2</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Electronics-  BL 3</controllingFieldValue>
+            <valueName>Elec-BL3-PL1</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Electronics-  BL 3</controllingFieldValue>
+            <valueName>Elec-BL3-PL2</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Cyb Sec  - BL 1</controllingFieldValue>
+            <valueName>Cyb-BL1-PL1</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Cyb Sec  - BL 1</controllingFieldValue>
+            <valueName>Cyb-BL1-PL2</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Cyb Sec - BL 2</controllingFieldValue>
+            <valueName>Cyb-BL2-PL1</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Cyb Sec - BL 2</controllingFieldValue>
+            <valueName>Cyb-BL2-PL2</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Cyb Sec - BL 3</controllingFieldValue>
+            <valueName>Cyb-BL3-PL1</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Cyb Sec - BL 3</controllingFieldValue>
+            <valueName>Cyb-BL3-PL2</valueName>
+        </valueSettings>
+    </valueSet>
+</CustomField>

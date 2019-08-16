@@ -1,0 +1,100 @@
+<apex:page standardController="Opportunity"
+ extensions="MEAVfController" action="{!getattachementbody}"          
+>
+<!--// action="{!autoRun}"  attibut du VFP declaration -->   
+    
+    <apex:includeScript value="{!URLFOR($Resource.jszip, 'jszip/dist/jszip.js')}"/>
+    <apex:includeScript value="{!URLFOR($Resource.jszip, 'jszip/vendor/FileSaver.js')}"/>
+    <apex:includeScript value="{!URLFOR($Resource.jsziputils, 'jsziputils/dist/jszip-utils.js')}"/>  
+    <apex:includeScript value="{!URLFOR($Resource.jszip, 'jszip/test/jquery-1.8.3.min.js')}"/>
+
+    <apex:form > 
+        <apex:outputPanel id="jsvalues">            
+            <apex:outputText value="Value two: {!fileBodyStr2}" /><br />            
+        </apex:outputPanel>
+
+        <apex:actionFunction name="insertatt2" action="{!insertattachement2}">
+            <apex:param name="sbody" value="" assignTo="{!fileBodyStr2}"/>
+        </apex:actionFunction>
+    </apex:form>
+    
+<script>
+   
+    var bodyStr = '{!fileBodyStr}';
+    var newBodyStr = 'AAA';        
+      var zip = new JSZip();
+	zip.loadAsync(bodyStr, {base64: true})
+		.then(function (zip) {
+            console.log(zip.files);
+            zip.file("word/document.xml").async("string")
+        	.then(function (data) {
+                myreg = /Nom conforme au K-bis/;
+                data2 = data.replace(myreg, 'Easyfront Consulting')
+                console.log("data2");
+                zip.file("word/document.xml", data2);
+                zip.file("word/document.xml").async("string").then(function (data3) {console.log("data3");});
+                zip.generateAsync({type:"base64"})
+                    .then(function (content) {
+                        newBodyStr = content;
+                        console.log(newBodyStr);
+                        insertatt2(newBodyStr);
+                    });
+                    // Download the new updated file
+                	//zip.generateAsync({type:"blob"}).then(function (content) {saveAs(content, "mondoc.docx");});                
+              });
+		});   
+    
+  </script>
+    
+   
+  <apex:sectionHeader title="Auto-Running Apex Code"/>
+  <apex:outputPanel >
+      You tried calling Apex Code from a button.  If you see this page, something went wrong.  You should have 
+      been redirected back to the record you clicked the button from.
+  </apex:outputPanel>
+</apex:page>
+
+        <!--
+        <div>var1: {!var1} :FIN</div>
+        <div>fileBody: {!fileBody} :FIN   </div>  
+        <div>fileBodyStr: {!fileBodyStr} :FIN</div>
+        <apex:commandButton value="Do something" action="{!doSomething}"/>
+        <apex:commandButton value="getattachementbody" action="{!getattachementbody}"/>
+        <apex:commandButton value="insertattachement2" action="{!insertattachement2}"/>
+        <apex:commandButton value="Set Value" onclick="sendVariable({!fileBodyStr2}); return false;" />
+  --> 
+
+<!--        
+        <apex:outputPanel id="jsvalues">
+            <apex:outputText value="Value one: {!valueOne}" /><br/>
+            <apex:outputText value="Value two: {!valueTwo}" /><br />            
+            <apex:outputText value="Value two: {!fileBodyStr2}" /><br />            
+        </apex:outputPanel>
+-->		
+<!--        
+        <span style="cursor: pointer;" 
+            onclick="hitMe('jhkjjk', 'best shot')">Hit Me</span>
+-->        
+        
+    <!-- <apex:inputTextarea id="myPlaceholder" value="{!fileBodyStr2}"/> -->
+    
+<!--    <apex:actionFunction name="passStringToController" action="{!mymethod}" rerender="myPlaceholder"/> -->
+<!--
+    //var chainesrc = 'Nom conforme au K-bis';
+    //alert('Message depuis javascript');
+    //alert('fileBody: ' + toto);
+    
+    
+      //window.setTimeout(function(){ window.location.reload(); }, 7000);
+    //}
+-->
+<!--    
+script>
+/*    function sendVariable(parameter){
+    jQuery('[id$=myPlaceholder]').val(parameter);
+    passValueToController();
+    console.log(jQuery('[id$=myPlaceholder]').val());
+    }
+*/
+script>
+  -->

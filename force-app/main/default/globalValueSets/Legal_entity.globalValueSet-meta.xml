@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GlobalValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customValue>
+        <fullName>Legal Entity 1</fullName>
+        <default>false</default>
+        <label>Legal Entity 1</label>
+    </customValue>
+    <customValue>
+        <fullName>Legal Entity 2</fullName>
+        <default>false</default>
+        <label>Legal Entity 2</label>
+    </customValue>
+    <customValue>
+        <fullName>Legal Entity 3</fullName>
+        <default>false</default>
+        <label>Legal Entity 3</label>
+    </customValue>
+    <customValue>
+        <fullName>Legal Entity 4</fullName>
+        <default>false</default>
+        <label>Legal Entity 4</label>
+    </customValue>
+    <masterLabel>Legal entity</masterLabel>
+    <sorted>false</sorted>
+</GlobalValueSet>

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RecordType xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Completion</fullName>
+    <active>true</active>
+    <description>Indique si la mesure est terminée ou non. Idée de suivi de jalons ou lorsque vous n&#39;avez aucune métrique basée sur des valeurs fixes. Par exemple : Obtenir la certification Salesforce.</description>
+    <label>Réalisation</label>
+</RecordType>

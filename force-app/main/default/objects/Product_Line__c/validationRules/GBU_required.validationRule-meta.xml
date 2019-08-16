@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>GBU_required</fullName>
+    <active>true</active>
+    <errorConditionFormula>ISPICKVAL(GBU__c, &#39;&#39;)</errorConditionFormula>
+    <errorDisplayField>Business_Line__c</errorDisplayField>
+    <errorMessage>GBU est obligatoire</errorMessage>
+</ValidationRule>

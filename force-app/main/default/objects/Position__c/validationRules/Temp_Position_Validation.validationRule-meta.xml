@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Temp_Position_Validation</fullName>
+    <active>true</active>
+    <errorConditionFormula>ISPICKVAL( Type__c , &quot;Temp&quot;)  &amp;&amp; ( BLANKVALUE(Duration__c,0) &lt;= 0 || Duration__c &gt; 365 )</errorConditionFormula>
+    <errorDisplayField>Duration__c</errorDisplayField>
+    <errorMessage>Temporary positions require a value for Duration between 1 and 365 days.</errorMessage>
+</ValidationRule>
